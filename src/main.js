@@ -11,7 +11,7 @@ Vue.component('my-component',{
         }
     },
     mounted: function() {
-        let _this = this;
+        var _this = this;
         // axios.get('/server/getTaobao')
         // .then(function (res) {
         //     if(res.status == 200){
