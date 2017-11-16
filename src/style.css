@@ -110,7 +110,7 @@ a {
       transition: opacity .3s ease-out;
 }
 .list-box .empty-bg {
-    background: url(//img.alicdn.com/tps/TB1Q736LXXXXXXpXFXXXXXXXXXX-32-32.png) 50% 50% no-repeat;
+    background: url(images/img-bg.png) 50% 50% no-repeat;
     display: block;
     position: absolute;
     width: 100%;
@@ -135,4 +135,19 @@ a {
 .list-box .content-line a {
       color: #666;
       font-size: 12px;
+}
+.tag{
+        height: 16px;
+    width: 16px;
+    text-align: center;
+    line-height: 16px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+}
+.tag-tmall {
+    background-image: url(images/t-16-16.png);
+    background-image: -webkit-image-set(url(./images/t-16-16.png) 1x,url(./images/t-32-32.png) 2x);
+    background-image: -ms-image-set(url(./images/t-16-16.png) 1x,url(./images/t-32-32.png) 2x);
+    background-image: -o-image-set(url(./images/t-16-16.png) 1x,url(./images/t-32-32.png) 2x);
 }

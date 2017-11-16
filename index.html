@@ -41,12 +41,12 @@
 		                </div>
 		                <div class="content-line">
 		                    <span class="fl">卖家:{{o.nick}}</span>
-		                    <span class="fr" style="color:red;">{{o.userType == 1 ? '天猫' : ''}}
-
-		                    </span>
 		                </div>
 		                 <div class="content-line">
 		                    <span class="fl">店铺:{{o.shopTitle}}</span>
+		                    <span class="fr">
+		                        <span v-if="o.userType == 1" class="tag tag-tmall"></span>
+		                    </span>
 		                </div>
 		            </div>
 		        </div>
