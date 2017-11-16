@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1">
+    <!-- 告诉设备忽略将页面中的数字识别为电话号码 和邮箱  
+    <meta content="telephone=no,email=no" name="format-detection">
+    <meta content="yes" name="apple-touch-fullscreen">
+    -->
+    <meta content="yes" name="apple-mobile-web-app-capable">
+
+    <title>优惠小伊</title>
+
+    <link rel="stylesheet" href="src/style.css">
+
+  </head>
+  <body>
+      	<div id="app">
+      		<my-component></my-component>
+      	</div>
+      	<!-- built files will be auto injected -->
+
+      	<script type="text/x-template" id="myComponent">//注意 type 和id。
+           	<div class="list">
+		        <div class="list-box" v-for="o in list" :key="o.auctionId">
+		            <div class="pic-box">
+		                <a :href="o.auctionUrl" class="box-img">
+		                    <span class="empty-bg"></span>
+		                    <img :src="o.pictUrl">
+		                </a>
+		            </div>
+		            <div class="box-content">
+		                <div class="content-line">
+		                    <p>
+		                        <a :href="o.auctionUrl" v-html="o.title"></a>
+		                    </p>
+		                </div>
+		                <div class="content-line">
+		                    <span class="fl">{{o.zkPrice}}</span>
+		                    <span class="fr">月销:{{o.biz30day}}</span>
+		                </div>
+		                <div class="content-line">
+		                    <span class="fl">卖家:{{o.nick}}</span>
+		                    <span class="fr" style="color:red;">{{o.userType == 1 ? '天猫' : ''}}
+
+		                    </span>
+		                </div>
+		                 <div class="content-line">
+		                    <span class="fl">店铺:{{o.shopTitle}}</span>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+      </script>
+      <script type="text/javascript" src="src/libs/data.js"></script>
+      <script type="text/javascript" src="src/libs/vue.min.js"></script>
+      <script type="text/javascript" src="src/main.js"></script>
+  </body>
+</html>

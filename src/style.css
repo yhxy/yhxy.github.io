@@ -1,0 +1,138 @@
+
+html,body{
+  padding: 0;
+  margin:0;
+  height: 100vh;
+  overflow: hidden;
+}
+body{
+  overflow: scroll;
+}
+* {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box
+}
+:before,:after {
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box
+}
+#app {
+  color: #2c3e50;
+  height: 100vh;
+  background: #fff;
+  font-family: 'Avenir', Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.main{
+  margin: 0;
+}
+.header .mint-header,.footer{
+  height: 50px;
+}
+.footer{
+  position:fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+}
+.footer .mint-tab-item{
+  padding: 10px 0;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+a {
+  color: #666;
+  outline: 0;
+  text-decoration: none;
+}
+.list {
+  width: 1200px;
+  margin: 20px auto;
+  overflow-y: hidden;
+}
+.list-box {
+  float: left;
+  position: relative;
+  width: 220px;
+  height: 410px;
+  background: #fff;
+  margin-left: 20px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  -moz-box-shadow: 0 1px 3px 0 rgba(32, 32, 64, 0.04);
+  -webkit-box-shadow: 0 1px 3px 0 rgba(32, 32, 64, 0.04);
+  -ms-box-shadow: 0 1px 3px 0 rgba(32, 32, 64, 0.04);
+  -o-box-shadow: 0 1px 3px 0 rgba(32, 32, 64, 0.04);
+  box-shadow: 0 1px 3px 0 rgba(32, 32, 64, 0.04);
+  -moz-transition: all .2s ease-out;
+  -webkit-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+.list-box .pic-box {
+    position: relative;
+    margin: 1px;
+}
+.list-box .box-img {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    width: 218px;
+    height: 218px;
+}
+.list-box .box-img img {
+      max-width: 218px;
+      max-height: 218px;
+      position: relative;
+      opacity: 1;
+      border: 0 none;
+      width: auto\9;
+      height: auto;
+      max-width: 100%;
+      vertical-align: top;
+      -ms-interpolation-mode: bicubic;
+      -moz-transition: opacity .3s ease-out;
+      -webkit-transition: opacity .3s ease-out;
+      -ms-transition: opacity .3s ease-out;
+      -o-transition: opacity .3s ease-out;
+      transition: opacity .3s ease-out;
+}
+.list-box .empty-bg {
+    background: url(//img.alicdn.com/tps/TB1Q736LXXXXXXpXFXXXXXXXXXX-32-32.png) 50% 50% no-repeat;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+}
+.list-box .box-content {
+    background: #fff;
+    width: 100%;
+    height: 107px;
+    padding-top: 7px;
+}
+.list-box .content-line {
+    line-height: 28px;
+    padding: 0 10px;
+}
+.list-box .content-line p {
+      line-height: 20px;
+      height: 40px;
+      overflow: hidden;
+}
+.list-box .content-line a {
+      color: #666;
+      font-size: 12px;
+}
