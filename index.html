@@ -9,6 +9,8 @@
     -->
     <meta content="yes" name="apple-mobile-web-app-capable">
 
+
+    <link rel="shortcut icon" href="favicon.ico" />
     <title>优惠小伊</title>
 
     <link rel="stylesheet" href="src/style.css">
@@ -16,42 +18,78 @@
   </head>
   <body>
       	<div id="app">
-      		<my-component></my-component>
+            <my-component></my-component>
       	</div>
       	<!-- built files will be auto injected -->
 
-      	<script type="text/x-template" id="myComponent">//注意 type 和id。
-           	<div class="list">
-		        <div class="list-box" v-for="o in list" :key="o.auctionId">
-		            <div class="pic-box">
-		                <a :href="o.auctionUrl" class="box-img">
-		                    <span class="empty-bg"></span>
-		                    <img :src="o.pictUrl">
-		                </a>
-		            </div>
-		            <div class="box-content">
-		                <div class="content-line">
-		                    <p>
-		                        <a :href="o.auctionUrl" v-html="o.title"></a>
-		                    </p>
-		                </div>
-		                <div class="content-line">
-		                    <span class="fl">{{o.zkPrice}}</span>
-		                    <span class="fr">月销:{{o.biz30day}}</span>
-		                </div>
-		                <div class="content-line">
-		                    <span class="fl">卖家:{{o.nick}}</span>
-		                </div>
-		                 <div class="content-line">
-		                    <span class="fl">店铺:{{o.shopTitle}}</span>
-		                    <span class="fr">
-		                        <span v-if="o.userType == 1" class="tag tag-tmall"></span>
-		                    </span>
-		                </div>
-		            </div>
-		        </div>
-		    </div>
-      </script>
+        <script type="text/x-template" id="myComponent">
+            <div>
+                <div class="navbar">
+                    <div class="nav-container">
+                        <div class="nav-logo-bar">
+                            <div class="nav-logo-img"></div>
+                            小伊为您全网寻找优惠商品
+                        </div>
+                        <div class="search">
+                            <form id="brand-search-form" v-on:submit.prevent="doop" >
+                                <div class="search-bar">
+                                    <input type="text" class="form-control inset-type" v-on:keyup.enter="search" v-model="searchText" name="name" placeholder="搜索品牌或产品名称" autocomplete="off" value="" _hover-ignore="1">
+                                    <button class="search-sub" type="button" @click="search">搜</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="list">
+                    <div class="list-box" v-for="o in list" :key="o.auctionId">
+                        <div class="pic-box">
+                            <a :href="o.auctionUrl" class="box-img">
+                                <span class="empty-bg"></span>
+                               <!--  <img :src="o.pictUrl"> -->
+                            </a>
+                        </div>
+                        <div class="box-content">
+                            <div class="content-line">
+                                <p>
+                                    <a :href="o.auctionUrl" v-html="o.title"></a>
+                                </p>
+                            </div>
+                            <div class="content-line">
+                                <span class="fl">{{o.zkPrice}}</span>
+                                <span class="fr">月销:{{o.biz30day}}</span>
+                            </div>
+                            <div class="content-line">
+                                <span class="fl">卖家:{{o.nick}}</span>
+                            </div>
+                             <div class="content-line">
+                                <span class="fl">店铺:{{o.shopTitle}}</span>
+                                <span class="fr">
+                                    <span v-if="o.userType == 1" class="tag tag-tmall"></span>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div v-if="!list.length" class="list-empty">
+                        暂无数据
+                    </div>
+                </div>
+                {{list.length}}
+                <pagination :jump="goto"></pagination>
+            </div>
+        </script>
+        <script type="text/x-template" id="page">
+        <ul class="pagination" v-if="allpage > 1">
+            <li :class="{'end': current == 1}" @click="prev()" >
+                <a href="javascript:void(0)">上一页</a>
+            </li>
+            <li v-for="index in pages" @click="goto(index)" :class="{'active':current == index}" :key="index">
+              <a href="javascript:void(0)" >{{index}}</a>
+            </li>
+            <li :class="{'end': allpage == current}" @click="next()">
+                <a href="javascript:void(0)" >下一页</a>
+            </li>
+        </ul>
+        </script>
       <script type="text/javascript" src="src/libs/data.js"></script>
       <script type="text/javascript" src="src/libs/vue.min.js"></script>
       <script type="text/javascript" src="src/main.js"></script>
