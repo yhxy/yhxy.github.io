@@ -29,7 +29,7 @@ Vue.component('my-component', {
             this.$nextTick(function(){
                 try{
                     document.documentElement.scrollTop = 0;
-                }catch(){}
+                }catch(e){}
             });
         },
         getPageData(index){
