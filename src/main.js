@@ -26,6 +26,11 @@ Vue.component('my-component', {
         },
         goto: function(index){
             this.list = this.getPageData(index);
+            this.$nextTick(function(){
+                try{
+                    document.documentElement.scrollTop = 0;
+                }catch(){}
+            });
         },
         getPageData(index){
             return this.caechData.slice((index - 1) * 30 , index * 30);
